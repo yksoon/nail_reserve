@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메디씨티 사용자페이지</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+     <!-- 플러그인 -->
+     <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+     <link rel="stylesheet" href="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+     <link rel="stylesheet" href="css/default.css">
+     <link rel="stylesheet" href="css/style.css">
+ 
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <!-- con_area //S -->
+        <div id="con_area">
+            <h2 class="subtitle">HOTEL 예약</h2>
+            <div class="hotel_reservation">
+                <div class="reservation_top">
+                    <span class="thumb"><img src="img/main/hotel01.png" alt=""></span>
+                    <div class="info">
+                        <h3>세인트존스호텔 강릉</h3>
+                        <h5>St.JOHN’S HOTEL</h5>
+                        <div class="hotel_venue">
+                            <p><span><img src="img/sub/hotel_venue.png" alt=""></span>강원도 강릉 창해로 307(강문동 1-1번지)</p>
+                            <p><span><img src="img/sub/hotel_tel.png" alt=""></span>033-660-9000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservation">
+                    <div class="left_box">
+                        <div class="calendar">
+                        </div>
+                    </div>
+                    <div class="right_box">
+                        <div class="info">
+                            <h3 class="hotel_name">강릉세인트존스호텔</h3>
+                            <div>
+                                <h6>예약</h6>
+                                <div>
+                                    <p>5월 26일 ~ 5월 27일</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h6>인원 수</h6>
+                                <div>
+                                    <p>성인 <button><img src="img/sub/remove.png" alt=""></button> 1명 <button><img src="img/sub/add.png" alt=""></button></p>
+                                    <p>아동 <button><img src="img/sub/remove.png" alt=""></button> 1명 <button><img src="img/sub/add.png" alt=""></button> <span>만 0세-17세</span></p>
+                                </div>
+                            </div>
+                            <div>
+                                <h6>객실 수</h6>
+                                <div>
+                                    <p><button><img src="img/sub/remove.png" alt=""></button> 1개 <button><img src="img/sub/add.png" alt=""></button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="hotel_reservation_step2.html" class="next_btn">다음</a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+         <!-- con_area //E -->
+
+
+        <footer></footer>
+
+        
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" language="javascript" src="js/nav.js"></script>
+
+<script>
+// header
+    const header = document.querySelector('header');
+    fetch('include/header.html')
+    .then(res => res.text())
+    .then(data => header.innerHTML = data);
+
+    //footer
+    const footer = document.querySelector('footer');
+    fetch('include/footer.html')
+    .then(res => res.text())
+    .then(data => footer.innerHTML = data);
+</script>
+
+<script>
+    $(function(){
+        $('.hotel_intro').each(function(){
+            var content = $(this).children('.hotel_intro_text');
+            var content_txt = content.text();
+            var content_txt_short = content_txt.substring(0,265)+"...";
+            var btn_more = $('<a href="javascript:void(0)" class="more">더보기</a>');
+
+            $(this).append(btn_more);
+            
+            if(content_txt.length > 260){
+                content.html(content_txt_short)
+                
+            }else{
+                btn_more.hide()
+            }
+            
+            btn_more.click(toggle_content);
+            // 아래 bind가 안 되는 이유는??
+            // btn_more.bind('click',toggle_content);
+
+            function toggle_content(){
+                if($(this).hasClass('short')){
+                    // 접기 상태
+                    $(this).html('더보기');
+                    content.html(content_txt_short)
+                    $(this).removeClass('short');
+                }else{
+                    // 더보기 상태
+                    $(this).html('접기');
+                    content.html(content_txt);
+                    $(this).addClass('short');
+
+                }
+            }
+        });
+        });
+</script>

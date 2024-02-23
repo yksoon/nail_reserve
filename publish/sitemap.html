@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메디씨티 사용자페이지</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+     <!-- 플러그인 -->
+     <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+     <link rel="stylesheet" href="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+     <script type="text/javascript" language="javascript" src="js/nav.js"></script>
+     <link rel="stylesheet" href="css/default.css">
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <!-- con_area //S -->
+        <div class="con_area">
+            <div class="sitemap_sub">
+                <div id="sitemap">
+                    <div>
+                        <div>
+                            <h3 class="font-38">SERVICE</h3>
+                            <ul>
+                                <li>
+                                    <a href="sitemap.html">
+                                        <span><img src="img/main/quick09.png" alt=""></span>
+                                        <p>전체 서비스</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><img src="img/main/quick03.png" alt=""></span>
+                                        <p>호텔 특가</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><img src="img/main/quick04.png" alt=""></span>
+                                        <p>MEDI ART</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><img src="img/main/quick05.png" alt=""></span>
+                                        <p>세무/회계 컨설팅</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><img src="img/main/quick06.png" alt=""></span>
+                                        <p>MICE/PCO</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex">
+                            <div>
+                                <h3 class="font-38">COMMUNITY</h3>
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <span><img src="img/main/quick10.png" alt=""></span>
+                                            <p>학회소식</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span><img src="img/main/quick11.png" alt=""></span>
+                                            <p>EVENT</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-38">MEMBERSHIP</h3>
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <span><img src="img/main/quick02.png" alt=""></span>
+                                            <p>MEDI POINT</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span><img src="img/main/quick07.png" alt=""></span>
+                                            <p>K-MEDI CREATOR</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span><img src="img/main/quick08.png" alt=""></span>
+                                            <p>MYPAGE</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- con_area //E -->
+
+
+        <footer></footer>
+
+        
+    </div>
+</body>
+</html>
+<script>
+    // header
+        const header = document.querySelector('header');
+        fetch('include/header.html')
+        .then(res => res.text())
+        .then(data => header.innerHTML = data);
+    
+        //footer
+        const footer = document.querySelector('footer');
+        fetch('include/footer.html')
+        .then(res => res.text())
+        .then(data => footer.innerHTML = data);
+    </script>

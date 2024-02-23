@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메디씨티 사용자페이지</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+     <!-- 플러그인 -->
+     <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+     <link rel="stylesheet" href="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+     <script type="text/javascript" language="javascript" src="js/nav.js"></script>
+     <link rel="stylesheet" href="css/default.css">
+     <link rel="stylesheet" href="css/style.css">
+ 
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <!-- con_area //S -->
+        <div class="con_area">
+            <div class="ok_page">
+                <span><img src="img/common/reservation.jpg" alt=""></span>
+                <h3>예약이 완료되었습니다.</h3>
+                <p>
+                    <strong class="red">본 예약은 예약 확정이 아닙니다.</strong><br>
+                    예약 확정 시 문자 안내 드리오니 문자 확인하여 예약에 착오없으시길 바랍니다.<br>
+                    감사합니다.
+                </p>
+                <div class="btn_box">
+                    <a href="mypage_reservation.html" class="backbtn">예약내역 확인하기 <span><img src="img/common/arrow.png" alt=""></span></a>
+                </div>
+            </div>
+        </div>
+         <!-- con_area //E -->
+
+
+        <footer></footer>
+
+        
+    </div>
+</body>
+</html>
+
+<script>
+// header
+    const header = document.querySelector('header');
+    fetch('include/header.html')
+    .then(res => res.text())
+    .then(data => header.innerHTML = data);
+
+    //footer
+    const footer = document.querySelector('footer');
+    fetch('include/footer.html')
+    .then(res => res.text())
+    .then(data => footer.innerHTML = data);
+</script>

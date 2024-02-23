@@ -1,0 +1,9 @@
+.mainContent {
+    margin-top: 60px !important;
+    margin-bottom: 110px !important;
+}
+
+.main_hotel .slick-dots li {
+    list-style-type: none;
+
+}

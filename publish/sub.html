@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>메디씨티 사용자페이지</title> 
+        <script src="js/jquery-3.7.0.min.js"></script>
+    
+         <!-- 플러그인 -->
+         <script src="js/jquery.bxslider.min.js"></script>
+         <link rel="stylesheet" href="css/jquery.bxslider.css">
+         <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+         <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+         <script type="text/javascript" src="js/slick.min.js"></script>
+    
+         <script src="js/nav.js"></script>
+    
+         <link rel="stylesheet" href="css/default.css">
+         <link rel="stylesheet" href="css/style.css">
+     
+    </head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <!-- con_area //S -->
+        <div id="con_area">
+            <div>
+
+
+            </div>
+        </div>
+         <!-- con_area //E -->
+
+
+        <footer></footer>
+
+        
+    </div>
+</body>
+</html>
+
+<script>
+// header
+    const header = document.querySelector('header');
+    fetch('include/header.html')
+    .then(res => res.text())
+    .then(data => header.innerHTML = data);
+
+    //footer
+    const footer = document.querySelector('footer');
+    fetch('include/footer.html')
+    .then(res => res.text())
+    .then(data => footer.innerHTML = data);
+</script>

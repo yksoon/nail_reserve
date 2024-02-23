@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메디씨티 사용자페이지</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+     <!-- 플러그인 -->
+     <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+     <link rel="stylesheet" href="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+     <link rel="stylesheet" href="css/default.css">
+     <link rel="stylesheet" href="css/style.css">
+ 
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <!-- con_area //S -->
+        <div id="con_area">
+            <h2 class="subtitle">HOTEL 예약</h2>
+            <div class="hotel_reservation">
+                <div class="reservation_top">
+                    <span class="thumb"><img src="img/main/hotel01.png" alt=""></span>
+                    <div class="info">
+                        <h3>세인트존스호텔 강릉</h3>
+                        <h5>St.JOHN’S HOTEL</h5>
+                        <div class="hotel_venue">
+                            <p><span><img src="img/sub/hotel_venue.png" alt=""></span>강원도 강릉 창해로 307(강문동 1-1번지)</p>
+                            <p><span><img src="img/sub/hotel_tel.png" alt=""></span>033-660-9000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservation">
+                    <div class="left_box">
+                        <div class="input_box">
+                            <div class="title">
+                                <h3>예약자 정보</h3>
+                                <a href="mypage_modify_step1.html" class="font-12">정보수정</a>
+                            </div>
+                            <div class="reservation_person">
+                                <div class="name_box">
+                                    <h5>이름</h5>
+                                    <div>
+                                        <input type="name" class="input" placeholder="성" readonly>
+                                        <input type="name" class="input" placeholder="이름" readonly>
+                                    </div>
+                                </div>
+                                <div class="phone_box">
+                                    <h5>연락처</h5>
+                                    <div id="phone_num" class="m0">
+                                        <input type="tel" class="input" id="phone_num1" value="010" readonly>
+                                        <input type="tel" class="input" id="phone_num2" readonly>
+                                        <input type="tel" class="input" id="phone_num3" readonly>
+                                    </div>
+                                </div>
+                                <div class="email_box">
+                                    <h5>이메일</h5>
+                                    <div><input type="email" class="input" readonly></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input_box">
+                            <div class="title flex guest_info">
+                                <h3>투숙객 정보 <span class="guest_add_btn" onclick="guest_add();">+</span></h3>
+                                <div class="flex">
+                                    <input type="checkbox" id="guest_info" class="hide">
+                                    <label for="guest_info" class="checkbox">
+                                        <svg width="9.772" height="7.181" viewBox="0 0 9.772 7.181" fill="#bdbdbd">
+                                            <path d="M0,6.181a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.414L4.474-.707a1,1,0,0,1,1.414,0,1,1,0,0,1,0,1.414L.707,5.888A1,1,0,0,1,0,6.181Z" transform="translate(3.591 1)"/>
+                                            <path d="M2.591,3.591A1,1,0,0,1,1.883,3.3L-.707.707a1,1,0,0,1,0-1.414,1,1,0,0,1,1.414,0L3.3,1.883a1,1,0,0,1-.707,1.707Z" transform="translate(1 3.591)" />
+                                        </svg>
+                                    </label>
+                                    예약자 정보와 같습니다.
+                                </div>
+                            </div>
+                            <div class="guest_box">
+                                <div class="guest">
+                                    <div class="guest_title">
+                                        <h4 class="guest_num">투숙객 1</h4>
+                                        <a href="javascript:void(0)" class="guest_remove">투숙객 삭제</a>
+                                    </div>
+                                    <div class="name_box">
+                                        <h5>이름</h5>
+                                        <div>
+                                            <input type="name" class="input" placeholder="성">
+                                            <input type="name" class="input" placeholder="이름">
+                                        </div>
+                                    </div>
+                                    <div class="phone_box">
+                                        <h5>연락처</h5>
+                                        <div id="phone_num" class="m0">
+                                            <input type="tel" class="input" id="phone_num1" value="010" readonly>
+                                            <input type="tel" class="input" id="phone_num2">
+                                            <input type="tel" class="input" id="phone_num3">
+                                        </div>
+                                    </div>
+                                    <div class="email_box">
+                                        <h5>이메일</h5>
+                                        <div><input type="email" class="input" autofocus></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input_box">
+                            <div class="title">
+                                <h3>요청사항</h3>
+                            </div>
+                            <div class="">
+                                <textarea name="" id="" class="input" placeholder="요청사항이 있으시다면 적어주세요."></textarea>
+                            </div>
+                        </div>
+                        <div class="input_box">
+                            <div class="title">
+                                <h3>예약 취소/변경 규정</h3>
+                            </div>
+                            <div>
+                                <p class="cancel">
+                                    체크인 3일 전: 위약금 없음<br>
+                                    체크인 2일 전: 객실료의 <span>30% 취소 위약금 부과</span><br>
+                                    체크인 1일 전: 객실료의 <span>50% 취소 위약금 부과</span><br>
+                                    당일 취소 및 No-Show: 객실료의 <span>100% 취소 위약금 부과</span><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_box">
+                        <div class="info">
+                            <h3 class="hotel_name">강릉세인트존스호텔</h3>
+                            <div>
+                                <h6>예약</h6>
+                                <div>
+                                    <p>5월 26일 ~ 5월 27일</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h6>인원 수</h6>
+                                <div>
+                                    <p>성인 1명</p>
+                                    <p>아동 1명 <span>만 0세-17세</span></p>
+                                </div>
+                            </div>
+                            <div>
+                                <h6>객실 수</h6>
+                                <div>
+                                    <p>1개</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h6>룸타입</h6>
+                                <div class="room_type">
+                                </div>
+                            </div>
+                            <div>
+                                <h6>결제금액</h6>
+                                <div>
+                                    <p><strong class="room_amount">0</strong>원<span>부가세 포함</span></p>
+                                </div>
+                            </div>
+                            <div class="agree">
+                                <input type="checkbox" id="reservation_agree" class="hide">
+                                <label for="reservation_agree" class="checkbox">
+                                    <svg width="9.772" height="7.181" viewBox="0 0 9.772 7.181" fill="#bdbdbd">
+                                        <path d="M0,6.181a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.414L4.474-.707a1,1,0,0,1,1.414,0,1,1,0,0,1,0,1.414L.707,5.888A1,1,0,0,1,0,6.181Z" transform="translate(3.591 1)"/>
+                                        <path d="M2.591,3.591A1,1,0,0,1,1.883,3.3L-.707.707a1,1,0,0,1,0-1.414,1,1,0,0,1,1.414,0L3.3,1.883a1,1,0,0,1-.707,1.707Z" transform="translate(1 3.591)" />
+                                    </svg>
+                                </label>
+                                <p>
+                                    해당 예약 요청 시, 메디씨티 <span>이용약관</span> 및 <span>개인정보 처리방침</span>을 읽었으며 이에 동의합니다.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="hotel_reservation_step4.html" class="next_btn">다음</a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+         <!-- con_area //E -->
+
+
+        <footer></footer>
+
+        
+    </div>
+
+    <div class="modal_wrap" id="modal_wrap">
+        <div class="modal w1400" id="modal">
+            <div class="modal_close" onclick="modal_close();"><img src="img/common/modal_close.png" alt=""></div>
+            <!-- modal content //S -->
+            <div class="room_info_modal ">
+                <div class="room_info">
+                    <div>
+                        <h5>Superior Accessible <span>슈페리어 액세서블 노오션뷰</span></h5>
+                        <div class="service_icon">
+                            <p><img src="img/icon/BED.svg" alt="">퀸사이즈침대 1개</p>
+                            <p><img src="img/icon/WIFI.svg" alt=""> 무료 WiFi</p>
+                            <p><img src="img/icon/PARKING.svg" alt=""> 무료 셀프 주차</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="room_slide" class="swiper-container room_slide">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><img src="img/sub/room_sam01.png" alt=""></li>
+                        <li class="swiper-slide"><img src="img/sub/room_sam02.png" alt=""></li>
+                        <li class="swiper-slide"><img src="img/sub/room_sam03.png" alt=""></li>
+                        <li class="swiper-slide"><img src="img/sub/room_sam01.png" alt=""></li>
+                        <li class="swiper-slide"><img src="img/sub/room_sam02.png" alt=""></li>
+                        <li class="swiper-slide"><img src="img/sub/room_sam03.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <script>
+                const slide = new Swiper('#room_slide', {
+                    slidesPerView : '3',
+                    spaceBetween : 23,
+                    loop : true,
+                    loopAdditionalSlides : 1,
+                    pagination : true,
+                    pagination: {
+                        el: ".swiper-scrollbar",
+                        type: "progressbar",
+                    },
+                    autoplay : false,
+                    freeMode : false,
+                    })
+            </script>
+            <div class="additional_info">
+                <b>추가정보</b><br>
+                체크인 혼잡시간<br>
+                주중 15:00 - 17:00<br>
+                주말 16:00 - 18:00<br>
+                입실시 혼잡시간을 피하여 입실하시면 기다리시는 시간을 줄일 수 있으며, 객실 배정에 불이익이 없습니다.<br><br>
+
+                시간연장<br>
+                Early check-in , Late check-out은 시간당 22,000원이 부과되며 퇴실 당일 기준 14시 이후에는 1박요금이 청구됩니다.<br>
+                퇴실 시간 연장을 원하시는분께서는 프론트로 연락바랍니다.<br><br>
+                <b>추가 유료 서비스</b><br>
+                조식뷔페 성인<br>
+                조식뷔페 소인(8세~13세)<br>
+                파인타워 인피니티풀 대인<br>
+                파인타워 인피니티풀 소인<br>
+                VR렌탈 서비스
+            </div>
+            <!-- modal content //E -->
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" language="javascript" src="js/nav.js"></script>
+<script type="text/javascript" language="javascript" src="js/sign.js"></script>
+
+<script>
+// header
+    const header = document.querySelector('header');
+    fetch('include/header.html')
+    .then(res => res.text())
+    .then(data => header.innerHTML = data);
+
+    //footer
+    const footer = document.querySelector('footer');
+    fetch('include/footer.html')
+    .then(res => res.text())
+    .then(data => footer.innerHTML = data);
+</script>
+
+
+<script>
+    var i = 1;
+    var guest = $('.guest_box').html();
+    
+    function guest_add() {
+         if (i >= 4) {
+             alert('최대 인원을 초과하였습니다.');
+             return;
+         }
+        $('.guest_box').append(guest);
+        i++;
+    }
+
+
+</script>
