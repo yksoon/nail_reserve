@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <link href="/favicon.ico" rel="icon" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="#000000" name="theme-color" />
+        <!--
+        manifest.json provides metadata used when your web app is installed on a
+        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+        -->
+        <link href="/manifest.json" rel="manifest" />
+
+        <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+<!--        <title>%VITE_PRJ_NAME%</title>-->
+        <title>
+            MediCity - Portal Service for Healthcare Professionals
+        </title>
+        <meta
+                content="MediCity offers a variety of customized services for doctors, nurses, and all healthcare professionals. Join MediCity to perfectly fulfill the needs of professional healthcare providers."
+                name="description"
+        />
+        <meta content="(주)메디씨티, 메디씨티, MEDI-CITY, MEDICITY, MediCity" name="keywords">
+        <meta content="img/common/og_img.jpg" property="og:image" />
+        <meta content="800" property="og:image:width" />
+        <meta content="400" property="og:image:height" />
+        <meta content="website" property="og:type" />
+        <meta content="template" property="og:url" />
+        <base href="/" />
+
+<!--        <script type="text/javascript" language = "javascript">-->
+        <script type="text/javascript">
+            // 모바일 웹 주소창 숨기기
+            window.addEventListener('load', function() {
+                // body의 height를 살짝 늘리는 코드
+                document.body.style.height = (document.documentElement.clientHeight + 5) + 'px';
+                // scroll를 제어 하는 코드
+                setTimeout(scrollTo, 0, 0, 1);
+            }, false);
+        </script>
+
+        <meta content="yes" name="apple-mobile-web-app-capable">
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script src="/src/index.jsx" type="module"></script>
+    </body>
+
+
+
+    <!-- services 외부 라이브러리 불러오기(하단에 위치) -->
+</html>

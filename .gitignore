@@ -170,13 +170,11 @@ $RECYCLE.BIN/
 # upload
 /upload/
 /upload_hi/
-/file
 /download
 /open_paper
 /open_paper2
 **/upload/*
 **/uploads/*
-**/file/*
 **/download/*
 **/open_paper/*
 **/open_paper2/*
@@ -186,3 +184,4 @@ $RECYCLE.BIN/
 
 #test
 /publish_test/
+.idea/
