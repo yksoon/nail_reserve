@@ -42,14 +42,14 @@ function Main() {
             {/*헤더*/}
             <Header />
 
-            {/*메인비주얼*/}
-            <MainMainvisual />
+            {/*/!*메인비주얼*!/*/}
+            {/*<MainMainvisual />*/}
 
-            {/*메인 컨텐츠*/}
+            {/*/!*메인 컨텐츠*!/*/}
             <MainContents />
 
             {/* 푸터 */}
-            <Footer />
+            {/*<Footer />*/}
         </>
     );
 }

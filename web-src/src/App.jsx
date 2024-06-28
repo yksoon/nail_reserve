@@ -29,6 +29,7 @@ import { successCode } from "etc/lib/resultCode";
 import apiPath from "etc/lib/path/apiPath";
 import { Helmet } from "react-helmet-async";
 import SEOMetaTag from "SEOMetaTag";
+import { Container } from "@mui/material";
 
 let currentPath = "";
 function App() {
@@ -61,7 +62,7 @@ function App() {
 
     return (
         <>
-            <div className="wrapper">
+            <Container maxWidth="sm">
                 <ConfirmContextProvider>
                     <AlertContextProvider>
                         <Router />
@@ -70,7 +71,7 @@ function App() {
                     </AlertContextProvider>
                 </ConfirmContextProvider>
                 {/* {isSpinner && <CommonSpinner />} */}
-            </div>
+            </Container>
             {/* <div>{spinnerOption.isLoading && <CommonSpinner />}</div> */}
         </>
     );

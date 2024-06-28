@@ -4,30 +4,24 @@ import Section03 from "components/web/main/mainComponents/mainContentsComponents
 import Section04 from "components/web/main/mainComponents/mainContentsComponents/Section04";
 import Section05 from "components/web/main/mainComponents/mainContentsComponents/Section05";
 import Section06 from "components/web/main/mainComponents/mainContentsComponents/Section06";
+import { Box } from "@mui/material";
 
 const MainContents = (props) => {
-
     return (
         <>
             <div id="container">
-                {/*section01*/}
-                <Section01 />
-
-                {/*section02*/}
-                <Section02 />
-
-                {/*section03*/}
-                <Section03 />
-
-                {/*section04*/}
-                <Section04 />
-
-                {/*section05*/}
-                <Section05 />
-
-                {/*section06*/}
-                <Section06 />
-
+                <Box display="flex" justifyContent="flex-end">
+                    <Box className="index_openkakao_btn">
+                        <div className="index_openkakao_img_div">
+                            <img
+                                src="./img/common/kakao.png"
+                                className="index_openkakao_img"
+                                alt=""
+                            />
+                        </div>
+                        <div className="index_openkakao_text_div">KakaoCh</div>
+                    </Box>
+                </Box>
             </div>
         </>
     );
