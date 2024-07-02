@@ -18,7 +18,7 @@ function Header(props) {
                 sx={{ p: 2, display: "flex", justifyContent: "center" }}
             >
                 <Box>
-                    <p className="main_sub_title">실시간 고객 예약현황</p>
+                    <p className="main_sub_title">Rservation</p>
                 </Box>
             </Box>
         </>

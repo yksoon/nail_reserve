@@ -796,7 +796,6 @@ select {
   }
 
 
-
 .main_title {
     font: normal normal bold 21px / 21px serif;
     color: #333333;
@@ -807,6 +806,7 @@ select {
     font-size: 21px;
     font-weight: bold;
     color: #333333;
+    font-family: "Baskervville", serif;
 }
 
 .index_openkakao_btn {
@@ -840,8 +840,6 @@ select {
     display: flex;
     align-items: center;
 }
-
-
 
 
 

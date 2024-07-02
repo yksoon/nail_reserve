@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import routerPath from "etc/lib/path/routerPath";
 import { Trans, useTranslation } from "react-i18next";
-import LineBreak from "etc/lib/language/web/LineBreak";
 import {
     FormControl,
     InputLabel,
@@ -246,7 +245,7 @@ function Footer() {
                             </a>
                         </div>
                     </address>
-                    <div className="copy">{LineBreak(t("footer.copy"))}</div>
+                    {/*<div className="copy">{LineBreak(t("footer.copy"))}</div>*/}
                 </div>
             </div>
             {/* footer //E */}
