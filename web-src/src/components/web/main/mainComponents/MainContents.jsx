@@ -10,16 +10,25 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import { Link } from "react-router-dom";
+import { CommonOpenUrl } from "etc/lib/Common";
 
 const MainContents = (props) => {
     // 달력 세팅
     const today = new Date();
+    // 현재 달의 첫 번째 날
+    const minDate = new Date(today.getFullYear(), today.getMonth(), 1);
+    // 다음 달의 마지막 날
+    const maxDate = new Date(today.getFullYear(), today.getMonth() + 2, 0);
 
     return (
         <>
             <div id="container">
                 <Box display="flex" justifyContent="flex-end" mt={5}>
-                    <Box className="index_openkakao_btn">
+                    <Box
+                        className="index_openkakao_btn"
+                        onClick={(e) => CommonOpenUrl("https://naver.com", e)}
+                    >
                         <div className="index_openkakao_img_div">
                             <img
                                 src="./img/common/kakao.png"
@@ -36,6 +45,8 @@ const MainContents = (props) => {
                             defaultValue={dayjs(today)}
                             disablePast={true}
                             slots={{ calendarHeader: CustomCalendarHeader }}
+                            minDate={minDate}
+                            maxDate={maxDate}
                             sx={{
                                 "& .MuiBadge-badge": {
                                     // Adjustment for recordMade badge
@@ -130,7 +141,7 @@ const MainContents = (props) => {
                                     aspectRatio: "1 !important",
                                     height: "auto !important",
                                 },
-
+                                height: "100%",
                                 width: "100%",
                                 maxHeight: "100%",
                             }}
@@ -161,29 +172,51 @@ const CustomCalendarHeader = (props) => {
         alignItems: "center",
     });
 
+    // 현재 달과 다음 달 계산
+    const today = dayjs();
+    const firstDayOfThisMonth = today.startOf("month");
+    const lastDayOfNextMonth = today.add(1, "month").endOf("month");
+
     return (
         <CustomCalendarHeaderRoot>
             <Stack spacing={1} direction="row">
                 {/*<IconButton onClick={selectPreviousYear} title="Previous year">*/}
                 {/*    <KeyboardDoubleArrowLeftIcon />*/}
                 {/*</IconButton>*/}
-                <IconButton
-                    onClick={selectPreviousMonth}
-                    title="Previous month"
-                >
-                    <ChevronLeft />
-                </IconButton>
+                {/*<IconButton*/}
+                {/*    onClick={selectPreviousMonth}*/}
+                {/*    title="Previous month"*/}
+                {/*>*/}
+                {/*    <ChevronLeft />*/}
+                {/*</IconButton>*/}
+                {currentMonth.isAfter(firstDayOfThisMonth) ? (
+                    <IconButton
+                        onClick={selectPreviousMonth}
+                        title="Previous month"
+                    >
+                        <ChevronLeft />
+                    </IconButton>
+                ) : (
+                    <div style={{ width: 40 }} />
+                )}
             </Stack>
             <Typography variant="body2">
                 {currentMonth.format("MMMM YYYY")}
             </Typography>
             <Stack spacing={1} direction="row">
-                <IconButton onClick={selectNextMonth} title="Next month">
-                    <ChevronRight />
-                </IconButton>
+                {/*<IconButton onClick={selectNextMonth} title="Next month">*/}
+                {/*    <ChevronRight />*/}
+                {/*</IconButton>*/}
                 {/*<IconButton onClick={selectNextYear} title="Next year">*/}
                 {/*    <KeyboardDoubleArrowRightIcon />*/}
                 {/*</IconButton>*/}
+                {currentMonth.isBefore(lastDayOfNextMonth, "month") ? (
+                    <IconButton onClick={selectNextMonth} title="Next month">
+                        <ChevronRight />
+                    </IconButton>
+                ) : (
+                    <div style={{ width: 40 }} />
+                )}
             </Stack>
         </CustomCalendarHeaderRoot>
     );

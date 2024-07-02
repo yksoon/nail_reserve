@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainContents from "./main/mainComponents/MainContents";
 import Header from "components/web/common/Header";
-import MainMainvisual from "components/web/main/mainComponents/MainMainvisual";
-import Footer from "components/web/common/Footer";
 import MainPopupModal from "./main/mainComponents/mainContentsComponents/modal/MainPopupModal";
 import { CommonErrModule } from "etc/lib/Common";
 import { useRecoilValue } from "recoil";
@@ -42,14 +40,8 @@ function Main() {
             {/*헤더*/}
             <Header />
 
-            {/*/!*메인비주얼*!/*/}
-            {/*<MainMainvisual />*/}
-
             {/*/!*메인 컨텐츠*!/*/}
             <MainContents />
-
-            {/* 푸터 */}
-            {/*<Footer />*/}
         </>
     );
 }
