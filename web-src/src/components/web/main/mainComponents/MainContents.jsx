@@ -13,6 +13,27 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import { Link } from "react-router-dom";
 import { CommonOpenUrl } from "etc/lib/Common";
 
+const CustomPickersDay = styled("div")(({ theme, selected, isSpecial }) => ({
+    ...theme.typography.caption,
+    width: 36,
+    height: 36,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 2px",
+    borderRadius: "50%",
+    backgroundColor: isSpecial
+        ? "#f50057" // 특정 날짜의 배경색
+        : selected
+        ? theme.palette.primary.main // 선택된 날짜의 기본 배경색
+        : "inherit", // 기본 배경색
+    color: isSpecial
+        ? theme.palette.common.white // 특정 날짜의 텍스트 색상
+        : selected
+        ? theme.palette.common.white // 선택된 날짜의 텍스트 색상
+        : "inherit", // 기본 텍스트 색상
+}));
+
 const MainContents = (props) => {
     // 달력 세팅
     const today = new Date();
@@ -20,6 +41,21 @@ const MainContents = (props) => {
     const minDate = new Date(today.getFullYear(), today.getMonth(), 1);
     // 다음 달의 마지막 날
     const maxDate = new Date(today.getFullYear(), today.getMonth() + 2, 0);
+
+    const specialDate = dayjs("2024-07-07"); // 특정 날짜 설정
+
+    const renderDay = (day, selectedDate, pickersDayProps) => {
+        const isSpecialDate = dayjs(day).isSame(specialDate, "day");
+        return (
+            <CustomPickersDay
+                {...pickersDayProps}
+                selected={pickersDayProps.selected}
+                isSpecial={isSpecialDate}
+            >
+                {day.format("D")}
+            </CustomPickersDay>
+        );
+    };
 
     return (
         <>
@@ -47,6 +83,7 @@ const MainContents = (props) => {
                             slots={{ calendarHeader: CustomCalendarHeader }}
                             minDate={minDate}
                             maxDate={maxDate}
+                            renderDay={renderDay}
                             sx={{
                                 "& .MuiBadge-badge": {
                                     // Adjustment for recordMade badge
@@ -144,6 +181,20 @@ const MainContents = (props) => {
                                 height: "100%",
                                 width: "100%",
                                 maxHeight: "100%",
+                                "& .MuiPickersDay-root.Mui-selected": {
+                                    backgroundColor: "transparent", // 선택된 날짜의 배경색을 투명하게 설정
+                                    color: "inherit", // 선택된 날짜의 텍스트 색상을 기본 색상으로 설정
+                                    border: "none", // 선택된 날짜의 테두리를 없앰
+                                },
+                                "& .MuiPickersDay-root.Mui-selected:hover": {
+                                    backgroundColor: "transparent", // 호버 상태에서도 배경색을 투명하게 유지
+                                },
+                                "& .MuiPickersDay-root.Mui-selected:focus": {
+                                    backgroundColor: "transparent", // 포커스 상태에서도 배경색을 투명하게 유지
+                                },
+                                "& .MuiPickersDay-root.MuiPickersDay-today": {
+                                    border: "1px solid #707070", // 오늘 날짜는 기본 테두리를 유지
+                                },
                             }}
                         />
                     </LocalizationProvider>
